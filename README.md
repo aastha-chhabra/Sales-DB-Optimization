@@ -32,7 +32,7 @@ Most retail DB projects stop at a basic schema and a few SELECT queries. This on
 │   └── 04_sample_data.sql             # 12 outlets, 22 SKUs, 20 customers, 30 transactions
 ├── data/
 │   └── sample_transactions.csv        # Flat denormalized CSV for quick Power BI import
-├── powerbi_dashboard_preview.html     # Interactive dashboard mockup (open in browser)
+├── powerbi_dashboard                  # Interactive dashboard
 └── README.md
 ```
 
@@ -99,31 +99,6 @@ Get Data → MySQL database → enter server and `retailiq` → select DirectQue
 
 ---
 
-## Setup
-
-```bash
-# 1. Create schema and all tables
-mysql -u root -p < sql/01_schema.sql
-
-# 2. Apply indexes, triggers, and event scheduler
-mysql -u root -p retailiq < sql/02_indexes_triggers_events.sql
-
-# 3. Load sample data
-mysql -u root -p retailiq < sql/04_sample_data.sql
-
-# 4. Run a test query
-mysql -u root -p retailiq -e "
-  SELECT outlet_name, city, region
-  FROM outlets
-  ORDER BY opened_date;"
-```
-
-**Requirements:** MySQL 8.0+ (window functions and Event Scheduler required)
+**Requirements:** MySQL 8.0+
 
 ---
-
-## Tech Stack
-
-- **MySQL 8.0** — schema, generated columns, CHECK constraints, window functions (`NTILE`, `LAG`, `DENSE_RANK`, `SUM OVER`), triggers, Event Scheduler
-- **Power BI Desktop** — DirectQuery + Import hybrid mode, DAX measures, conditional formatting
-- **SQL** — CTEs, covering indexes, partial indexes, materialized summary pattern
