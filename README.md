@@ -1,6 +1,6 @@
-# RetailIQ — Multi-Outlet Sales Intelligence Database
+# RetailIQ — Multi-Outlet Sales Database Optimization
 
-A production-grade MySQL database and Power BI analytics system built for a retail chain with 12 outlets across India. Designed from the ground up with performance, auditability, and real-time business intelligence in mind.
+A MySQL database and Power BI analytics system built for a retail chain with 12 outlets across India. Designed from the ground up with performance, auditability, and real-time business intelligence in mind.
 
 **~30% query latency reduction** through composite indexes, covering indexes, partial indexes, and a nightly pre-aggregated summary table — measured on a 500K+ transaction dataset.
 
