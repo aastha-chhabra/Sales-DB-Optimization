@@ -93,12 +93,3 @@ Five panels — see `powerbi_dashboard_preview.html` for the interactive mockup:
 | **Sales Trends** | Line chart + QoQ cards | `Q3` → monthly CTE with `LAG()` |
 | **Customer RFM** | Segment bubble chart | `Q4` → `rfm_scores` |
 | **Inventory Alerts** | Conditional-format table | `Q5` → `inventory` with partial index |
-
-**Connecting to MySQL:**  
-Get Data → MySQL database → enter server and `retailiq` → select DirectQuery for `sales_transactions` and `txn_items`, Import for reference tables.
-
----
-
-**Requirements:** MySQL 8.0+
-
----
